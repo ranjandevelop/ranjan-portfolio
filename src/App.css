@@ -1,0 +1,16 @@
+::-webkit-scrollbar {
+  display: none;
+}
+#hero_section {
+  position: relative !important;
+}
+#particles canvas {
+  /* z-index: -1; */
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute !important;
+  /* top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; */
+}
