@@ -20,11 +20,19 @@ const Journey = () => {
         "I worked on the front-end development of a web application. I implemented APIs to connect the application to the back-end and built the user interface using ANGULAR.",
     },
     {
-      title: "Feb, 2023 to Feb 2024",
+      title: "Feb, 2023 to Feb, 2024",
       cardTitle: "Worked as a Web Developer",
       cardSubtitle: "The Teachief Academy | Kolkata, West Bengal",
       cardDetailedText:
         "I've created more than seven WordPress Websites. From development to deployment. I managed the entire process independently. Along with the company website, I worked on websites that listed properties, were technical, offered tours and travels. I also worked closely with the design team to ensure that the application was visually appealing and easy to use. I gained a strong understanding of front-end development.",
+    },
+    {
+      title: "June, 2024",
+      cardTitle: "Join as a Web Developer",
+      cardSubtitle:
+        " Marconix Sales Solutions Pvt. Ltd. | Bengaluru, Karnataka",
+      cardDetailedText:
+        " Currently working on technoliges like ReactJS and Wordpress",
     },
   ];
   return (
