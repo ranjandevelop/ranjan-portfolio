@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -11,82 +14,212 @@
   position: absolute !important;
 }
 
-.card {
-  --font-color: #323232;
-  --font-color-sub: #666;
-  --bg-color: #fff;
-  --main-color: #323232;
-  --main-focus: #2d8cf0;
-  width: 230px;
-  height: 300px;
-  background: var(--bg-color);
-  border: 2px solid var(--main-color);
-  box-shadow: 4px 4px var(--main-color);
-  border-radius: 5px;
+
+body {
+  font-family: "ABeeZee", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background-color: #efefef;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bento {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.box {
+  background-color: rgba(255,255,255,0.1);
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+#profile-info {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#skills {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 4; 
+  grid-column-end: 5;
+}
+
+#projects {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 5;
+  grid-column-end: 8;
+  gap: 2rem;
+}
+
+#experience {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+#instaLogo {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+
+
+/* Media Queries for Mobile Responsiveness */
+
+@media (max-width: 767px) {
+  .bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  #profile-info {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  #skills {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  #projects {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  #experience {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  #instaLogo {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    height: 100vh;
+  }
+
+  .bento {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+  }
+
+  #profile-info, #skills, #projects, #experience, #instaLogo {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+
+.content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 20px;
-  gap: 10px;
+  gap: 15px;
+  width: 300px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
 }
-
-.card-img {
-  transition: all 0.5s;
+.content::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: 0;
+  width: 40px;
+  height: 96px;
+  z-index: 2;
+  border-radius: 10px 0 0 10px;
+}
+.content::after {
+  content: "";
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: 0;
+  width: 40px;
+  height: 96px;
+  z-index: 9;
+  border-radius: 0 10px 10px 0;
+}
+.basic-marquee {
   display: flex;
-  justify-content: center;
-}
-
-.card-title {
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-  color: var(--font-color);
-}
-
-.card-subtitle {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--font-color-sub);
-}
-
-.card-divider {
-  width: 100%;
-  border: 1px solid var(--main-color);
-  border-radius: 50px;
-}
-
-.card-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-}
-
-.card-price {
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--font-color);
-}
-
-.card-price span {
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--font-color-sub);
-}
-
-.card-btn {
-  height: 35px;
-  padding: 0 15px;
-  transition: all 0.3s;
-}
-
-.card-btn svg {
+  justify-content: center;
+  gap: 10px;
   width: 100%;
-  height: 100%;
-  fill: var(--main-color);
-  transition: all 0.3s;
+}
+.basic-marquee .button {
+  transition: all 0.3s ease;
+}
+.basic-marquee .button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.basic-marquee-1 {
+  animation: marquee 10s linear infinite;
 }
 
-.card-img:hover {
-  transform: translateY(-3px);
+.benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  min-width: 900px;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.basic-marquee svg {
+  width: 40px;
+}
+.basic-marquee button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
