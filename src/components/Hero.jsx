@@ -8,6 +8,7 @@ import View from "../assets/view.png";
 import Download from "../assets/file.png";
 import Gmail from "../assets/gmail.png";
 import Experience from "./Experience";
+import Resume from "../assets/ranjanKumarPrasad.pdf";
 
 const Hero = () => {
   return (
@@ -77,22 +78,26 @@ const Hero = () => {
             </a>
           </div>
           <div className="box flex justify-evenly items-center" id="resume">
-            <img
-              src={View}
-              alt=""
-              style={{ height: "100px", width: "100px" }}
-            />
-            <img
-              src={Download}
-              alt=""
-              style={{ height: "100px", width: "100px" }}
-            />
+            <a href={Resume}>
+              <img
+                src={View}
+                alt=""
+                style={{ height: "100px", width: "100px" }}
+              />
+            </a>
+            <a href={Resume} download={"ranjanKuamrPrasad.pdf"}>
+              <img
+                src={Download}
+                alt=""
+                style={{ height: "100px", width: "100px" }}
+              />
+            </a>
           </div>
           <div className="box" id="experience">
             <Experience />
           </div>
           <div className="box flex justify-center items-center" id="emailLogo">
-            <a target="_blank" href="mailto:ranjanprasad@gmail.com">
+            <a target="_blank" href="mailto:ranjanprasad745@gmail.com">
               <img
                 src={Gmail}
                 alt=""
