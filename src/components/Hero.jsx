@@ -36,7 +36,7 @@ const Hero = () => {
           <div className="box flex justify-between items-center" id="skills">
             <Skills />
           </div>
-          <div className="box overflow-scroll" id="projects">
+          <div className="box md:overflow-hidden" id="projects">
             <Projects />
           </div>
           <div
