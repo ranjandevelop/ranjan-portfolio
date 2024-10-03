@@ -36,14 +36,14 @@ const Hero = () => {
           <div className="box flex justify-between items-center" id="skills">
             <Skills />
           </div>
-          <div className="box md:overflow-hidden" id="projects">
+          <div className="box md:overflow-scroll" id="projects">
             <Projects />
           </div>
           <div
             className="box flex justify-center items-center flex-col"
             id="githubLogo"
           >
-            <div className="text-white">ReactJS/Javasript</div>
+            <div className="text-white">ReactJS/Javascript</div>
             <div className="relative group inline-block p-4 w-[100%]">
               <a href="https://harry-potter-db-dusky.vercel.app/">
                 <div className="bg-white py-2 rounded-md shadow-lg hover:cursor-pointer flex justify-center items-center gap-4 px-4">
