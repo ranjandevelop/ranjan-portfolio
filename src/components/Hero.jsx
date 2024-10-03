@@ -2,11 +2,13 @@ import React from "react";
 import ParticlesComponent from "./Particles";
 import Skills from "./Skills";
 import ProfileInfo from "./ProfileInfo";
+import Projects from "./Projects";
 import LinkedInImg from "../assets/linkedin.svg";
 import InstaImg from "../assets/instagram.png";
 import View from "../assets/view.png";
 import Download from "../assets/file.png";
 import Gmail from "../assets/gmail.png";
+import Github from "../assets/github.png";
 import Experience from "./Experience";
 import Resume from "../assets/ranjanKumarPrasad.pdf";
 
@@ -34,10 +36,17 @@ const Hero = () => {
           <div className="box flex justify-between items-center" id="skills">
             <Skills />
           </div>
-          <div className="box" id="projects">
-            <div class="relative group inline-block p-4">
+          <div className="box overflow-scroll" id="projects">
+            <Projects />
+          </div>
+          <div
+            className="box flex justify-center items-center flex-col"
+            id="githubLogo"
+          >
+            <div className="text-white">ReactJS/Javasript</div>
+            <div className="relative group inline-block p-4 w-[100%]">
               <a href="https://harry-potter-db-dusky.vercel.app/">
-                <div class="bg-white py-2 rounded-md shadow-lg hover:cursor-pointer flex justify-center items-center gap-4 px-4">
+                <div className="bg-white py-2 rounded-md shadow-lg hover:cursor-pointer flex justify-center items-center gap-4 px-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -58,9 +67,7 @@ const Hero = () => {
                 </div>
               </a>
             </div>
-          </div>
-          <div className="box flex justify-center items-center" id="githubLogo">
-            <a href="https://github.com/ranjandevelop">
+            {/* <a href="">
               <button class="flex gap-3 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-7 py-3 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
                 <svg
                   viewBox="0 0 24 24"
@@ -75,7 +82,7 @@ const Hero = () => {
                 </svg>
                 Github
               </button>
-            </a>
+            </a> */}
           </div>
           <div className="box flex justify-evenly items-center" id="resume">
             <a href={Resume}>
@@ -85,11 +92,15 @@ const Hero = () => {
                 style={{ height: "100px", width: "100px" }}
               />
             </a>
-            <a href={Resume} download={"ranjanKuamrPrasad.pdf"}>
+            <a href={Resume} href="https://github.com/ranjandevelop">
               <img
-                src={Download}
+                src={Github}
                 alt=""
-                style={{ height: "100px", width: "100px" }}
+                style={{
+                  height: "100px",
+                  width: "100px",
+                  color: "#fff",
+                }}
               />
             </a>
           </div>
